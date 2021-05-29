@@ -1,31 +1,34 @@
 <template>
   <div id="app">
-    <Header/>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="wWelcome to Your Vue.js App"/>
+    <Header :publicCurrentUser="currentUserData"/>
+      <router-view :key="$route.fullPath" @userConnected="setUserConnected"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import Header from './components/Header.vue'
 
 export default {
+
+  data () {
+    return {
+      currentUserData: false
+    }
+  },
+
   name: 'App',
   components: {
-    HelloWorld,
     Header
+  },
+
+  methods: {
+    setUserConnected: function(userData) {
+      // changement de la data currentUserData
+      this.currentUserData = userData;
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
