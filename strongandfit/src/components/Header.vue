@@ -2,13 +2,17 @@
 
 <header>
 
-    <div>
+    <div id="header">
 
-        <h6>Bonjour</h6>
+        <h1>Strong And Fit</h1>
 
-        <router-link :to="{name: 'login'}"> 
-            <button>Se connecter</button>
-        </router-link>
+        <h6>Bonjour {{currentUser.username}}</h6>
+
+        <div v-if="!currentUser">
+            <router-link :to="{name: 'login'}"> 
+                <button>Se connecter</button>
+            </router-link>
+        </div>
 
         <div v-if="currentUser">
             <button @click="disconnect">Déconnexion</button>
@@ -41,4 +45,13 @@ export default {
 </script>
 
 <style scoped>
+header
+{
+display: flex;
+flex-direction:row;
+align-items: center;
+justify-content: center;
+margin: 0 6px;
+}
+    
 </style>
