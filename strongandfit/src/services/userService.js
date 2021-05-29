@@ -1,9 +1,9 @@
 import axios from "axios";
-//import configuration from './configuration.js';
+import configuration from './configuration.js';
 
 const userService = {
     userDataKey: 'userData',
-    baseURI: 'http://localhost/strongandfit/public',
+    baseURI: configuration.backendBaseURI,
 
     getToken: function(username, password) {
 
