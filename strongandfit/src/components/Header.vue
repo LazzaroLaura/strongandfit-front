@@ -4,19 +4,26 @@
 
     <div id="header">
 
-        <h1>Strong And Fit</h1>
+        <router-link :to="{name: 'home'}">
+            <h1>Strong And Fit</h1>
+        </router-link>
 
-        <h6>Bonjour {{currentUser.username}}</h6>
+            <h6>Bonjour {{currentUser.username}}</h6>
 
-        <div v-if="!currentUser">
-            <router-link :to="{name: 'login'}"> 
-                <button>Se connecter</button>
-            </router-link>
-        </div>
+            <div v-if="!currentUser">
+                <router-link :to="{name: 'login'}"> 
+                    <button>Se connecter</button>
+                </router-link>
+            </div>
 
-        <div v-if="currentUser">
-            <button @click="disconnect">Déconnexion</button>
-        </div>
+            <div v-if="currentUser">
+                <button @click="disconnect">Déconnexion</button>
+            </div>
+
+            <div>
+                <SelectZone />
+                <SelectType />
+            </div>
 
     </div>
 
@@ -26,15 +33,23 @@
 
 <script>
 import userService from '../services/userService.js';
+import SelectZone from './SelectZone.vue';
+import SelectType from './SelectType.vue';
 
 export default {
       methods: {
         disconnect: function() {
-            // descruction des données dans le session storage
             userService.deleteCurrentUserData();
-            // nous "forçons" le header pour qu'il considère qu'il n'y a plus d'utilisateur connecté
             this.currentUser = false;
+            this.$router.push({
+                name: "home"
+            });
         },
+    },
+
+    components: {
+        SelectZone,
+        SelectType
     },
 
     created() {

@@ -1,7 +1,14 @@
 <template>
   <div id="app">
+
     <Header :publicCurrentUser="currentUserData"/>
+
+    <div id="filters">
+  
+    </div>
+
       <router-view :key="$route.fullPath" @userConnected="setUserConnected"/>
+
   </div>
 </template>
 
