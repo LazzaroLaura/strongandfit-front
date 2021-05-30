@@ -1,12 +1,15 @@
 <template>
     <section>
 
+    <div v-if="currentUser">
+
         <h1>Programmes</h1>
         <ProgramThumbnail
             v-for="currentProgram in programs"
             :key="currentProgram.id"
             :program="currentProgram"
         />
+    </div>
 
     </section>
 </template>
@@ -15,7 +18,7 @@
 <script>
 import ProgramThumbnail from './ProgramThumbnail.vue';
 import programService from '../services/programService.js';
-
+import userService from '../services/userService.js';
 
 export default {
 
@@ -27,6 +30,8 @@ export default {
         programService.getPrograms().then((programs) => {
             this.programs = programs;
         });
+    
+        this.currentUser = userService.getCurrentUserData();
     },
 
     data: function() {
