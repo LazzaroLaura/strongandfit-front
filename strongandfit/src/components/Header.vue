@@ -8,7 +8,7 @@
             <h1>Strong And Fit</h1>
         </router-link>
 
-            <h6>Bonjour {{currentUser.username}}</h6>
+            <h6>Bonjour {{currentUser.displayName}}</h6>
 
             <div v-if="!currentUser">
                 <router-link :to="{name: 'login'}"> 
