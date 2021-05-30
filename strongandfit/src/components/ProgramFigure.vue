@@ -1,9 +1,9 @@
 <template>
     <figure>
-        <img :src="image"/>
         <figcaption>
             <h2> {{title}} </h2>
         </figcaption>
+        <img :src="image"/>
     </figure>
 </template>
 
