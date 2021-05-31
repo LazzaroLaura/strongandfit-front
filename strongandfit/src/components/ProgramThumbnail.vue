@@ -1,8 +1,6 @@
 <template>
     <article v-if="program">
 
-        <!-- affichage de l'image de mise en avant //-->
-        <!-- CORRECTION ATELIER //-->
         <ProgramFigure
             v-if="program._embedded['wp:featuredmedia']"
             :image="program._embedded['wp:featuredmedia'][0].source_url"

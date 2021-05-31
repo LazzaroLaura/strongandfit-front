@@ -21,8 +21,7 @@
             </div>
 
             <div>
-                <SelectZone />
-                <SelectType />
+                <Selects />
             </div>
 
     </div>
@@ -33,8 +32,7 @@
 
 <script>
 import userService from '../services/userService.js';
-import SelectZone from './SelectZone.vue';
-import SelectType from './SelectType.vue';
+import Selects from './Selects.vue';
 
 export default {
       methods: {
@@ -48,8 +46,7 @@ export default {
     },
 
     components: {
-        SelectZone,
-        SelectType
+        Selects,
     },
 
     created() {

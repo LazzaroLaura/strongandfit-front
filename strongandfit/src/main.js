@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-
-
 import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 
@@ -23,6 +21,11 @@ const router = new VueRouter(
         path: '/login',
         component: Login
       },
+      {
+        name: 'programsBySearch',
+        path: '/programs-by-search/:id/:typeId',
+        component: ProgramsBySearch
+      },
     ]
 
   }
@@ -30,6 +33,7 @@ const router = new VueRouter(
 
 import Login from './views/Login.vue';
 import Home from './views/Home.vue';
+import ProgramsBySearch from './views/ProgramsBySearch.vue';
 
 Vue.config.productionTip = false
 
