@@ -4,7 +4,7 @@
         <ProgramThumbnail
             v-for="currentProgram in programs"
             :key="currentProgram.id"
-            :recipe="currentProgram"
+            :program="currentProgram"
         />
     </section>
 </template>
