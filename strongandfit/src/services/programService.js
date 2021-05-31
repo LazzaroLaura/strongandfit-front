@@ -23,7 +23,6 @@ const programService = {
     getProgramsByTypeAndZone: function(zoneId, typeId) {
 
         return axios.get(programService.baseURI + '/wp-json/wp/v2/program?_embed=1&zone=' + zoneId + '&tax_relation=AND&type=' + typeId)
-    
         .then(programService.handleGetProgramsResponse);
     },
 

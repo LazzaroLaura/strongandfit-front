@@ -31,6 +31,11 @@ const router = new VueRouter(
         path: '/signup',
         component: Signup
       },
+      {
+        name: 'personnalPage',
+        path: '/personnal-page',
+        component: PersonnalPage
+      },
     ]
 
   }
@@ -39,6 +44,7 @@ const router = new VueRouter(
 import Login from './views/Login.vue';
 import Home from './views/Home.vue';
 import Signup from './views/Signup.vue';
+import PersonnalPage from './views/PersonnalPage.vue';
 import ProgramsBySearch from './views/ProgramsBySearch.vue';
 
 Vue.config.productionTip = false
