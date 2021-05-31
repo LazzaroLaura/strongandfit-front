@@ -14,6 +14,9 @@
                 <router-link :to="{name: 'login'}"> 
                     <button>Se connecter</button>
                 </router-link>
+                <router-link :to="{name: 'signup'}"> 
+                    <button>S'inscrire</button>
+                </router-link>
             </div>
 
             <div v-if="currentUser">

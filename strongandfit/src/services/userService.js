@@ -47,6 +47,19 @@ const userService = {
         window.sessionStorage.removeItem(userService.userDataKey);
         localStorage.clear();
     },
+
+    signup: function(username, password, email) {
+        return axios.post(
+            userService.baseURI + '/wp-json/strongandfit/v1/signup',
+            {
+              username: username,
+              password: password,
+              email: email
+            }
+          ).then(response => {
+            return response.data;
+          });
+    },
 }
 
 export default userService;

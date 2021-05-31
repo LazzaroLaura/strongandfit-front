@@ -26,6 +26,11 @@ const router = new VueRouter(
         path: '/programs-by-search/:id/:typeId',
         component: ProgramsBySearch
       },
+      {
+        name: 'signup',
+        path: '/signup',
+        component: Signup
+      },
     ]
 
   }
@@ -33,6 +38,7 @@ const router = new VueRouter(
 
 import Login from './views/Login.vue';
 import Home from './views/Home.vue';
+import Signup from './views/Signup.vue';
 import ProgramsBySearch from './views/ProgramsBySearch.vue';
 
 Vue.config.productionTip = false
