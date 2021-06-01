@@ -14,20 +14,21 @@ const sessionService = {
         .then(sessionService.handleGetSessionsResponse);
     },
 
-    createSession: function(time) {
+    createSession: function(time, programId, title) {
         const currentUserData = userService.getCurrentUserData();
 
         if(currentUserData) {
 
             const token = currentUserData.token;
-      
+            //console.log('createSession :' + programId);
             return axios.post(
       
               userService.baseURI + '/wp-json/strongandfit/v1/session-create',
               {
-                title: 'test front',
-                content: 'test front',
-                user_time: time
+                title: title,
+                content: 'Bravo ! Vous avez complété cette séance, prêt à la refaire ?',
+                user_time: time,
+                program_id: programId
               },
       
               // ajout du token d'indentification dans les headers de la requête http

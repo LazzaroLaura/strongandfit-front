@@ -71,10 +71,12 @@ export default {
         clearInterval(this.timer);
         //console.log(this.elapsedTime);
         const time = this.elapsedTime / 1000;
-        sessionService.createSession(time, /* programId */);
+        const programId = this.program.id;
+        const title = this.program.title.rendered;
+        //console.log(title);
+        sessionService.createSession(time, programId, title);
         },
     },
-
 
     created: function() {
 
@@ -92,12 +94,6 @@ export default {
     components: {
         ProgramFigure,
     },
-
-    /* data: function() {
-        return {
-            program: null,
-        }
-    }, */
 }
 
 </script>
