@@ -1,7 +1,7 @@
 <template>
     <article v-if="program">
 
-        <Figure
+        <ProgramFigure
             v-if="program._embedded['wp:featuredmedia']"
             :image="program._embedded['wp:featuredmedia'][0].source_url"
             :title="program.title.rendered"
@@ -16,7 +16,7 @@
 
 <script>
 
-import Figure from './Figure.vue';
+import ProgramFigure from './ProgramFigure.vue';
 
 export default {
     props:{
@@ -26,7 +26,7 @@ export default {
     },
 
     components: {
-        Figure
+        ProgramFigure
     }
 }
 </script>

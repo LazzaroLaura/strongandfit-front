@@ -1,10 +1,11 @@
 <template>
     <article v-if="session">
 
-        <Figure
+        <SessionFigure
             v-if="session._embedded['wp:featuredmedia']"
             :image="session._embedded['wp:featuredmedia'][0].source_url"
             :title="session.title.rendered"
+            :time="session.user_time"
         />
         <h2 v-else>{{session.title.rendered}}</h2>
 
@@ -16,7 +17,7 @@
 
 <script>
 
-import Figure from './Figure.vue';
+import SessionFigure from './SessionFigure.vue';
 
 export default {
     props:{
@@ -26,7 +27,7 @@ export default {
     },
 
     components: {
-        Figure
+        SessionFigure
     }
 }
 
