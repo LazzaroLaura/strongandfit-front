@@ -26,6 +26,13 @@ const programService = {
         .then(programService.handleGetProgramsResponse);
     },
 
+    getProgramById: function(programId) {
+        return axios.get(programService.baseURI + '/wp-json/wp/v2/program/' + programId +'?_embed=1')
+        .then(response => {
+          return response.data;
+        });
+    },
+
     handleGetProgramsResponse: function(response) {
         return response.data;
     },

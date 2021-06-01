@@ -36,11 +36,19 @@ const router = new VueRouter(
         path: '/personnal-page',
         component: PersonnalPage
       },
+      {
+        name: 'program',
+  
+        // dans l'url, :id permet de récupérérer un partie variable
+        path: '/program/:id',
+        component: Program
+      },
     ]
 
   }
 )
 
+import Program from './views/Program.vue';
 import Login from './views/Login.vue';
 import Home from './views/Home.vue';
 import Signup from './views/Signup.vue';

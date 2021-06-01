@@ -3,7 +3,6 @@
 
     <div v-if="currentUser">
 
-        <h1>Programmes</h1>
         <ProgramThumbnail
             v-for="currentProgram in programs"
             :key="currentProgram.id"

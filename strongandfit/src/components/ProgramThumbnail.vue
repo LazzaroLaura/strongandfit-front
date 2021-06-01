@@ -10,6 +10,15 @@
 
         <div class="excerpt" v-html="program.excerpt.rendered"></div>
 
+        <router-link :to="{
+                name: 'program',
+                params: {
+                    id: program.id
+                }
+            }">
+                <button>Faire ce programme</button>
+        </router-link>
+
     </article>
 </template>
 
