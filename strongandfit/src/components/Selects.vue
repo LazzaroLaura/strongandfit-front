@@ -1,6 +1,6 @@
 <template>
 
-<div>
+<div id="select">
 
     <fieldset>
         Choix de la zone
@@ -99,5 +99,15 @@ export default {
 
 
 <style scoped>
+
+#select
+{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: start;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 </style>

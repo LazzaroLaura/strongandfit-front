@@ -14,6 +14,37 @@ const sessionService = {
         .then(sessionService.handleGetSessionsResponse);
     },
 
+    createSession: function(time) {
+        const currentUserData = userService.getCurrentUserData();
+
+        if(currentUserData) {
+
+            const token = currentUserData.token;
+      
+            return axios.post(
+      
+              userService.baseURI + '/wp-json/strongandfit/v1/session-create',
+              {
+                title: 'test front',
+                content: 'test front',
+                user_time: time
+              },
+      
+              // ajout du token d'indentification dans les headers de la requête http
+              {
+                headers: {
+                  Authorization: 'Bearer ' + token
+                }
+              }
+            ).then(response => {
+              return response.data;
+            });
+          }
+          else {
+            return false;
+          }
+    },
+
     handleGetSessionsResponse: function(response) {
         return response.data;
     },

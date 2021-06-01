@@ -17,9 +17,8 @@
 
             <h2>Faire ce programme</h2>
             <div id="app">
-                <button @click="start">Start</button>
-                <button @click="stop">Stop</button>
-                <button @click="reset">Reset</button>
+                <button @click="start">Commencer</button>
+                <button @click="stop">J'ai terminé</button>
                 <p>{{formattedElapsedTime}}</p>
             </div>
 
@@ -40,6 +39,7 @@
 <script>
 
 import programService from '../services/programService.js';
+import sessionService from '../services/sessionService.js';
 import ProgramFigure from '../components/ProgramFigure.vue';
 
 
@@ -69,10 +69,10 @@ export default {
         },
         stop() {
         clearInterval(this.timer);
+        //console.log(this.elapsedTime);
+        const time = this.elapsedTime / 1000;
+        sessionService.createSession(time, /* programId */);
         },
-        reset() {
-        this.elapsedTime = 0;
-        }
     },
 
 
