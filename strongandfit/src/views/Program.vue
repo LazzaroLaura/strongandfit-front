@@ -15,6 +15,14 @@
                 <div v-html="program.content.rendered"></div>
             </main>
 
+            <h2>Faire ce programme</h2>
+            <div id="app">
+                <button @click="start">Start</button>
+                <button @click="stop">Stop</button>
+                <button @click="reset">Reset</button>
+                <p>{{formattedElapsedTime}}</p>
+            </div>
+
             <div>
                 <router-link :to="{
                     name: 'home'
@@ -37,6 +45,37 @@ import ProgramFigure from '../components/ProgramFigure.vue';
 
 export default {
 
+    name: "App",
+    data() {
+        return {
+        elapsedTime: 0,
+        timer: undefined,
+        program: null,
+        };
+    },
+    computed: {
+        formattedElapsedTime() {
+        const date = new Date(null);
+        date.setSeconds(this.elapsedTime / 1000);
+        const utc = date.toUTCString();
+        return utc.substr(utc.indexOf(":") - 2, 8);
+        }
+    },
+    methods: {
+        start() {
+        this.timer = setInterval(() => {
+            this.elapsedTime += 1000;
+        }, 1000);
+        },
+        stop() {
+        clearInterval(this.timer);
+        },
+        reset() {
+        this.elapsedTime = 0;
+        }
+    },
+
+
     created: function() {
 
         const programId = this.$route.params.id;
@@ -54,11 +93,11 @@ export default {
         ProgramFigure,
     },
 
-    data: function() {
+    /* data: function() {
         return {
             program: null,
         }
-    },
+    }, */
 }
 
 </script>
