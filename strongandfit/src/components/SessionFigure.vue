@@ -14,13 +14,14 @@ export default {
     props: {
         image: String,
         title: String,
-        time: String,
+        time: String
     },
 
     created() {
         this.time = this.time / 60;
         this.time = this.time.toFixed(2);
-    }
+    },
+
 }
 
 </script>

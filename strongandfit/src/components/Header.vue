@@ -4,12 +4,18 @@
 
     <div id="header">
 
-        <router-link :to="{name: 'home'}">
-            <h1>Strong And Fit</h1>
-        </router-link>
+            <router-link :to="{name: 'home'}">
+                <h1>Strong And Fit</h1>
+            </router-link>
 
-            <div v-if="!currentUser">
+            <div v-if="currentUser">
                 <h6>Bonjour {{currentUser.displayName}}</h6>
+            </div>
+
+            <div v-if="currentUser">
+                <router-link :to="{name: 'personnalPage'}"> 
+                    <button>Mon espace perso</button>
+                </router-link>
             </div>
 
             <div v-if="!currentUser">

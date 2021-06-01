@@ -13,7 +13,9 @@ import SessionList from '../components/SessionList.vue';
 export default {
     components: {
         SessionList
-    }
+    },
+
+    
 }
 
 </script>
