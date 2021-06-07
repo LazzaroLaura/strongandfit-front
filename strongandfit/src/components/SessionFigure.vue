@@ -4,7 +4,7 @@
             <h2> {{title}} </h2>
         </figcaption>
         <img :src="image"/>
-        <h3>Votre temps pour ce programme : {{time}}min</h3>
+        <h3>Votre temps pour ce programme : {{time}}</h3>
     </figure>
 </template>
 
