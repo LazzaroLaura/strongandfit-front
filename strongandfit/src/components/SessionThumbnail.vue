@@ -16,7 +16,6 @@
 
 
 <script>
-
 import SessionFigure from './SessionFigure.vue';
 
 export default {
@@ -28,7 +27,10 @@ export default {
 
     components: {
         SessionFigure
-    }
+    },
+
+    
+
 }
 
 </script>

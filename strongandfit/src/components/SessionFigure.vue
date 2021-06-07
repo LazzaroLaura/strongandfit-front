@@ -16,12 +16,6 @@ export default {
         title: String,
         time: String
     },
-
-    created() {
-        this.time = this.time / 60;
-        this.time = this.time.toFixed(2);
-    },
-
 }
 
 </script>
