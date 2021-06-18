@@ -5,7 +5,7 @@
             v-if="session._embedded['wp:featuredmedia']"
             :image="session._embedded['wp:featuredmedia'][0].source_url"
             :title="session.title.rendered"
-            :time="session.user_time"
+            :time="session.meta.user_time"
         />
         <h2 v-else>{{session.title.rendered}}</h2>
         <h3>{{session.user_time}}</h3>
